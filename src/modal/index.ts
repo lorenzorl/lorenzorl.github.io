@@ -1,10 +1,4 @@
-interface Project {
-  name: string,
-  description: string,
-  img: string,
-  link: string,
-  imageSrc?: string | URL
-}
+import { Project } from "../types";
 
 export default class Modal {
 
@@ -33,7 +27,7 @@ export default class Modal {
 
     if (modalTitleElement != undefined) modalTitleElement.innerText = name;
     if (modalDescriptionElement != undefined) modalDescriptionElement.innerText = description;
-    if (typeof imageSrc == 'object') modalImgElement?.setAttribute('src', imageSrc.href);
+    if (imageSrc != undefined) modalImgElement?.setAttribute('src', imageSrc);
     modalLinkElement?.setAttribute('target', '_blank');
     modalLinkElement?.setAttribute('href', link);
 

@@ -3,7 +3,6 @@ import colors from './colors'
 import { Point } from '../types';
 
 export default function () {
-  console.log('starting circles')
   const svgElement = document.querySelector<SVGElement>("#circlesBackground");
   const circlesWrapper = svgElement?.querySelector("g");
   if (circlesWrapper == undefined) return;

@@ -6,9 +6,8 @@ const getImagesOfProjects = async (): Promise<Images> => {
   const images: Images = {};
 
   for (const path in modules) {
-    await modules[path]();
-
-    const p = new URL(path, import.meta.url)
+    const la : any = await modules[path]();
+    const p = la.default;
     const name = path.split('/')[path.split('/').length - 1];
     images[name] = p;
   }
@@ -21,7 +20,7 @@ const getProjectElement = (project: Project, images: Images, modal: Modal) => {
   projectElement.classList.add('project');
 
   const projectImgElement = document.createElement('img');
-  projectImgElement.setAttribute('src', images[project.img].href);
+  projectImgElement.setAttribute('src', images[project.img]);
   projectElement.appendChild(projectImgElement);
 
   const projectInfoElement = document.createElement('div');

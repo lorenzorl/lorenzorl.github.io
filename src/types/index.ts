@@ -3,7 +3,7 @@ export interface Project {
   description: string,
   img: string,
   link: string,
-  imageSrc?: string | URL
+  imageSrc?: string
 }
 
 export interface Skill {
@@ -12,7 +12,7 @@ export interface Skill {
 }
 
 export interface Images {
-  [property: string] : URL
+  [property: string] : string
 }
 
 export interface Point {
