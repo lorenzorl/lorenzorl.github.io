@@ -1,1 +1,1 @@
-const a="/assets/axie-cards.45cfa2bd.png";export{a as default};
+const a="/portfolio/assets/axie-cards.45cfa2bd.png";export{a as default};
