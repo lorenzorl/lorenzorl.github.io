@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Cartas de Axie Infinity.",
+    "img": "axie-cards.png",
+    "description": "Pagina que muestra todas las cartas de Axie Infinity.",
+    "link": "https://axiecards.web.app"
+  },
+  {
+    "name": "Calculadora de SLP",
+    "img": "calculadora-slp.png",
+    "description": "Pagina para calcular el precio del SLP en varias monedas del mundo.",
+    "link": "https://lorenzorl.github.io/slpconvert/"
+  },
+  {
+    "name": "Multibet",
+    "img": "multibet.png",
+    "description": "Pagina para administrar script y referidos de freebitcoin.",
+    "link": "https://multibetbtc.web.app/"
+  }
+]

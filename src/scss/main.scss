@@ -1,0 +1,20 @@
+@import 'abstracts/variables';
+@import 'abstracts/responsive-mixins';
+
+@import 'base/normalize';
+@import 'base/reset';
+@import 'base/gradients';
+@import 'base/typography';
+
+@import 'components/home';
+@import 'components/helpers';
+@import 'components/about';
+@import 'components/who-is';
+@import 'components/skills';
+@import 'components/projects';
+@import 'components/icon';
+@import 'components/modal';
+@import 'components/mask';
+@import 'components/animation';
+
+

@@ -1,0 +1,54 @@
+.skills {
+  max-width: 100%;
+  width: 100%;
+  padding: 20px 10px;
+
+  &__list {
+    li {
+      list-style: none;
+    }
+  }
+
+  @include tablet {
+    max-width: 50%;
+  }
+}
+.skill {
+  width: 100%;
+  display: flex;
+  margin: 12px 0;
+  // background: #607d8b;
+  padding: 5px;
+
+  &__name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
+    width: 30%;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+
+  &__bg {
+    background: #bdbdbd;
+    flex-grow: 1;
+    border-radius: 30px;
+    overflow: hidden;
+  }
+  
+  &__percent {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background: $primary;
+    width: 50%;
+    height: 100%;
+    text-align: end;
+    padding: 1px 10px;
+    color: #FFF;
+    font-weight: bold;
+    border-radius: 30px;
+    font-size: 0.7rem;
+  }
+}

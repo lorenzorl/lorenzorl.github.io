@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:site_name" content="Portafolio">
+  <meta property="og:title" content="Portafolio de Lorenzo">
+  <meta property="og:image" content="static/min.png">
+  <meta property="og:url" content="https://lorenzorl.github.io/portafolio/">
+  <link rel="icon" href="static/favicon.png" type="image/png" sizes="32x32">
+  <title>Portafolio</title>
+</head>
+<body>
+  <section class="home">
+    <div class="animation">
+      <svg id="circlesBackground" style="width: 100%; height: 100%;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="myblurfilter" width="110%" height="110%">
+            <feGaussianBlur stdDeviation="80" result="blur" />
+          </filter>
+        </defs>
+        <g filter="url(#myblurfilter)">
+        </g> 
+      </svg>
+    </div>
+    <div class="home__title">
+      Hola, soy <span class="text-blue">Lorenzo Rangel</span>.
+      <br>
+      <span>Desarrollador Frontend.</span>
+    </div>
+    <button class="home__button">
+      Mira mi trabajo
+      <div class="icon icon--rounded">
+        <i class="fas fa-chevron-right fa-xs"></i>
+      </div>
+    </button>
+  </section>
+  <section class="about" id="about">
+    <div class="about__title">Sobre Mí</div>
+    <div class="flex-container">
+      <div class="who-is">
+        <div class="who-is__photo">
+          <img src="src/assets/yo.jpg">
+        </div>
+        <h2>¿Quien es este chico?</h2>
+        <p>Soy un desarrollador frontend especializado en Vuejs.
+        <br>
+        Hagamos algo especial.</p>
+      </div>
+      <div class="skills">
+        <ul class="skills__list">
+          
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="projects" id="projects">
+    <div class="projects__title">Proyectos</div>
+    <div class="flex-container">
+      
+    </div>
+  </section>
+  <div class="mask">
+    <div class="modal__wrapper">
+      <div class="modal">
+        <div class="modal__img">
+          <!-- <div class="modal__arrow-left">
+            <i class="fas fa-chevron-circle-right fa-sm"></i>
+          </div> -->
+          <img src="">
+          <!-- <div class="modal__arrow-right">
+            <i class="fas fa-chevron-circle-left fa-sm"></i>
+          </div> -->
+        </div>
+        <div class="modal__title">
+          <h3></h3>
+        </div>
+        <div class="modal__description"></div>
+        <a href="#" class="modal__button">
+          <i class="fas fa-external-link-alt fa-sm margin-right-10"></i>
+          Ir al sitio
+        </a>
+      </div>
+      <div class="modal__close">
+        <i class="fas fa-times fa-xs"></i>
+      </div>
+    </div>
+  </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

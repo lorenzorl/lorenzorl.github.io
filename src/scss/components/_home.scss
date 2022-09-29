@@ -1,0 +1,33 @@
+.home {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #15161b;
+
+  &__title {
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    z-index: 1;
+  }
+
+  &__button {
+    appearance: none;
+    border: none;
+    background: $primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    z-index: 1;
+  }
+}

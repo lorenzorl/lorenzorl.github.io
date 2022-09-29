@@ -1,0 +1,110 @@
+.modal {
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__wrapper {
+    width: 90%;
+    max-width: 650px;
+    position: relative;
+    opacity: 0;
+    will-change: opacity, transform;
+
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+
+    -webkit-transition:
+      -webkit-transform 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946),
+      opacity 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+
+    transition:
+      transform 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946),
+      opacity 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+  }
+
+  &__close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $red;
+    border-radius: 100%;
+    cursor: pointer;
+    color: $white;
+  }
+  &__img {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+  }
+  &__title {
+    font-size: 1.1rem;
+    margin: 0 30px;
+  }
+  &__description {
+    flex-grow: 1;
+    padding: 20px;
+    @include tablet {
+      font-size: 0.8rem;
+    }
+  }
+  &__button {
+    width: 130px;
+    appearance: none;
+    border: none;
+    background: $primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    margin-bottom: 10px;
+
+    @include tablet {
+      font-size: 0.7rem;
+    }
+  }
+
+  &__arrow-left, &__arrow-right {
+    position: absolute;
+    top: 50%;
+    color: #9e9e9e;
+  }
+
+  &__arrow-left {
+    right: 10px;
+  }
+
+  &__arrow-right {
+    left: 10px;
+  }
+
+  &--show {
+    opacity: 1;
+
+    -webkit-transform: scale(1);
+    transform: scale(1);
+
+    -webkit-transition:
+      -webkit-transform 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946),
+      opacity 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+
+    transition:
+      transform 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946),
+      opacity 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+  }
+}
