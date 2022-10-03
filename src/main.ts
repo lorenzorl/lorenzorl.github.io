@@ -35,10 +35,11 @@ buttonHomeElement?.addEventListener('click', () => {
   });
 })
 
-maskElement?.addEventListener('click', () => {
-  if (modal._isVisible) {
-    modal.closeModal();
+maskElement?.addEventListener('click', e => {
+  if (!modal._isVisible || modal._modalElement.contains(e.target as HTMLElement)) {
+    return
   }
+  modal.closeModal();
 });
 
 skills.forEach(skill => addSkill(skill));
@@ -46,12 +47,11 @@ skills.forEach(skill => addSkill(skill));
 getImagesOfProjects().then((images) => {
   const imagesOfProjects = images;
   projects.forEach(project => addProject(project, imagesOfProjects));
-
 });
 
 function addProject(project: Project, images: Images) : void{
   const projectsContainerElement = document.querySelector<HTMLDivElement>('.projects')?.lastElementChild;
-  const projectElement = getProjectElement(project, images, modal);
+  const projectElement = getProjectElement(project, images[project.slug], modal);
   projectsContainerElement?.appendChild(projectElement);
 }
 

@@ -1,9 +1,11 @@
 export interface Project {
   name: string,
+  slug: string,
   description: string,
   img: string,
   link: string,
-  imageSrc?: string
+  technologies: string[],
+  images?: string[]
 }
 
 export interface Skill {
@@ -12,7 +14,7 @@ export interface Skill {
 }
 
 export interface Images {
-  [property: string] : string
+  [property: string] : string[]
 }
 
 export interface Point {

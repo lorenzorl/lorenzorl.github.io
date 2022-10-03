@@ -9,6 +9,7 @@
   <meta property="og:image" content="static/min.png">
   <meta property="og:url" content="https://lorenzorl.github.io/portafolio/">
   <link rel="icon" href="static/favicon.png" type="image/png" sizes="32x32">
+  <link rel="stylesheet" href="swiper.min.css">
   <title>Portafolio</title>
 </head>
 <body>
@@ -25,9 +26,9 @@
       </svg>
     </div>
     <div class="home__title">
-      Hola, soy <span class="text-blue">Lorenzo Rangel</span>.
+      Hola, soy <span class="text-blue">Lorenzo Rangel</span>
       <br>
-      <span>Desarrollador Frontend.</span>
+      <span>Desarrollador Frontend</span>
     </div>
     <button class="home__button">
       Mira mi trabajo
@@ -65,18 +66,26 @@
     <div class="modal__wrapper">
       <div class="modal">
         <div class="modal__img">
-          <!-- <div class="modal__arrow-left">
-            <i class="fas fa-chevron-circle-right fa-sm"></i>
-          </div> -->
-          <img src="">
-          <!-- <div class="modal__arrow-right">
-            <i class="fas fa-chevron-circle-left fa-sm"></i>
-          </div> -->
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">Slide 1</div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev">
+              <i class="fas fa-arrow-alt-circle-left fa-lg"></i>
+            </div>
+            <div class="swiper-button-next">
+              <i class="fas fa-arrow-alt-circle-right fa-lg"></i>
+            </div>
+          </div>
         </div>
         <div class="modal__title">
           <h3></h3>
         </div>
         <div class="modal__description"></div>
+        <div class="modal__tags"></div>
         <a href="#" class="modal__button">
           <i class="fas fa-external-link-alt fa-sm margin-right-10"></i>
           Ir al sitio

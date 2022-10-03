@@ -1,4 +1,5 @@
 import { Project } from "../types";
+import Swiper from 'swiper'
 
 export default class Modal {
 
@@ -18,20 +19,67 @@ export default class Modal {
   }
 
   openModal(data: Project): void {
-    const { imageSrc, name, description, link } = data;
+    const { images, name, description, link } = data;
     const modalElement = this._modalElement;
     const modalTitleElement = modalElement.querySelector<HTMLElement>('.modal__title');
-    const modalImgElement = modalElement.querySelector<HTMLElement>('.modal__img > img');
+    const modalSwiperElement = modalElement.querySelector<HTMLElement>('.modal__img .swiper-wrapper');
     const modalDescriptionElement = modalElement.querySelector<HTMLElement>('.modal__description');
+    const modalTagsElement = modalElement.querySelector<HTMLElement>('.modal__tags');
     const modalLinkElement = modalElement.querySelector<HTMLElement>('.modal__button');
 
     if (modalTitleElement != undefined) modalTitleElement.innerText = name;
     if (modalDescriptionElement != undefined) modalDescriptionElement.innerText = description;
-    if (imageSrc != undefined) modalImgElement?.setAttribute('src', imageSrc);
+    if (modalSwiperElement && images) this.addSlides(modalSwiperElement, images);
+    if (modalTagsElement) this.createTags(modalTagsElement, data.technologies);
     modalLinkElement?.setAttribute('target', '_blank');
     modalLinkElement?.setAttribute('href', link);
 
     this.show();
+  }
+  addSlides(parentElement: HTMLElement, images: string[]): void {
+    parentElement.innerHTML = '';
+    
+    images.forEach(image => {
+      const swiperSlideElement = document.createElement('div');
+      swiperSlideElement.classList.add('swiper-slide');
+
+      const imageElement = document.createElement('img');
+      imageElement.setAttribute('src', image);
+      swiperSlideElement.appendChild(imageElement);
+      parentElement.appendChild(swiperSlideElement);
+    });    
+
+    const swiper = new Swiper('.swiper', {
+    
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      }
+
+    });
+
+    swiper.el.querySelector('.swiper-button-next')?.addEventListener('click', () => {
+      if (swiper.slides.length === 1) return;
+      swiper.slideNext();
+    });
+    swiper.el.querySelector('.swiper-button-prev')?.addEventListener('click', () => {
+      if (swiper.slides.length === 1) return;
+      swiper.slidePrev();
+    });
+
+  }
+  createTags(tagsElement: HTMLElement, tags: string[]): void {
+    tagsElement.innerHTML = '';
+    tags.forEach(tag => {
+      const modalTagElement = document.createElement('div');
+      modalTagElement.classList.add('modal__tag');
+      modalTagElement.innerText = tag;
+      tagsElement.appendChild(modalTagElement);
+    });
   }
   show(): void {
     this._isVisible = true;
