@@ -10,11 +10,15 @@ import {
 } from './helpers'
 
 import circlesBackground from './circlesBackground'
+import iconsBackground from './iconsBackground'
 
 import { Project, Skill, Images } from './types'
 
 // Circles Background
-circlesBackground();
+// circlesBackground();
+
+// Icons Background
+iconsBackground();
 
 // MODAL
 const modalElement = document.querySelector<HTMLDivElement>('.modal');

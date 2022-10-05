@@ -26,5 +26,17 @@
   {
     "name": "Firebase",
     "percent": 50
+  },
+  {
+    "name": "Vercel",
+    "percent": 60
+  },
+  {
+    "name": "Typescript",
+    "percent": 70
+  },
+  {
+    "name": "Vite",
+    "percent": 80
   }
 ]
