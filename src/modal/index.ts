@@ -31,8 +31,15 @@ export default class Modal {
     if (modalDescriptionElement != undefined) modalDescriptionElement.innerText = description;
     if (modalSwiperElement && images) this.addSlides(modalSwiperElement, images);
     if (modalTagsElement) this.createTags(modalTagsElement, data.technologies);
-    modalLinkElement?.setAttribute('target', '_blank');
-    modalLinkElement?.setAttribute('href', link);
+
+    if (data.link) {
+      modalLinkElement?.classList.remove('hide');
+      modalLinkElement?.setAttribute('target', '_blank');
+      modalLinkElement?.setAttribute('href', link);
+    } else {
+      modalLinkElement?.classList.add('hide');
+      modalLinkElement?.setAttribute('href', '#');
+    }
 
     this.show();
   }
@@ -85,11 +92,13 @@ export default class Modal {
     this._isVisible = true;
     this._maskElement.classList.add('mask--show');
     this._modalElement.parentElement?.classList.add('modal--show');
+    document.body.classList.add('stop-scroll');
   }
   hide(): void {
     this._isVisible = false;
     this._maskElement.classList.remove('mask--show');
     this._modalElement.parentElement?.classList.remove('modal--show');
+    document.body.classList.remove('stop-scroll');
   }
   closeModal(): void {
     this.hide();

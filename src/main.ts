@@ -9,13 +9,10 @@ import {
   getImagesOfProjects
 } from './helpers'
 
-import circlesBackground from './circlesBackground'
 import iconsBackground from './iconsBackground'
 
 import { Project, Skill, Images } from './types'
 
-// Circles Background
-// circlesBackground();
 
 // Icons Background
 iconsBackground();
@@ -50,7 +47,7 @@ skills.forEach(skill => addSkill(skill));
 
 getImagesOfProjects().then((images) => {
   const imagesOfProjects = images;
-  projects.forEach(project => addProject(project, imagesOfProjects));
+  (projects as Project[]).forEach(project => addProject(project, imagesOfProjects));
 });
 
 function addProject(project: Project, images: Images) : void{

@@ -38,5 +38,9 @@
   {
     "name": "Vite",
     "percent": 80
+  },
+  {
+    "name": "Wordpress",
+    "percent": 60
   }
 ]
